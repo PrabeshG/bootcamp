@@ -44,9 +44,10 @@ require_once("dbconn.php");
           $count = 1;
           if($res){
           while($r = mysqli_fetch_array($res)){
+            $id = $r["id"];
           ?>
             <tr>
-              <td><a href="/details.php?id=<?php echo $count; ?>"><?php echo $count; ?></a></td>
+              <td><a href="/details.php?id=<?php echo $id; ?>"><?php echo $count; ?></a></td>
               <td><?php echo $r["name"]; ?></td>
               <td><?php echo $r["email"]; ?></td>
               <td><?php echo $r["contact"]; ?></td>
