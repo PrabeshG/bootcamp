@@ -65,7 +65,7 @@
           </form>
         </div>
     <div class="col-sm-6">
-      <img src="/phplogo.png" alt="php" class="img-rounded">
+      <img src="/bootcamp/phplogo.png" alt="php" class="img-fluid img-rounded img-responsive">
     </div>
   </div>
     </div>
