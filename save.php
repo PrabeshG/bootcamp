@@ -7,19 +7,34 @@
   $contact = $_POST["contact"];
   $address = $_POST["address"];
   $comments = $_POST["comments"];
+  $age = $_POST["age"];
+  $gender = $_POST["gender"];
+  $education = $_POST["education"];
+  $semester = $_POST["semester"];
+  $college = $_POST["college"];
 
   $query = "INSERT INTO `participantsDetails`(
             `name`,
             `email`,
             `contact`,
             `address`,
-            `comments`
+            `comments`,
+            `age`,
+            `gender`,
+            `education`,
+            `semester`,
+            `college`
           ) VALUES (
             '".$name."',
             '".$email."',
             '".$contact."',
             '".$address."',
-            '".$comments."'
+            '".$comments."',
+            '".$age."',
+            '".$gender."',
+            '".$education."',
+            '".$semester."',
+            '".$college."'
           )";
   $result = $conn->query($query);
   if($result){
