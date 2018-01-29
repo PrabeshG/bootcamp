@@ -33,18 +33,20 @@
             </div>
             <div class="form-group">
               <label for="Age">Age</label>
-              <select class="form-control" id="age" name="age">
-                <?php for($age=15;$age<35;$age++){
+              <select class="form-control" name="age" placeholder="Select Age">
+                <?php for($age=15;$age<=35;$age++){
                   ?>
-                  <option><?php echo $age; ?></option>
+                  <option value="<?php echo $age; ?>"><?php echo $age; ?></option>
                   <?php
                 } ?>
               </select>
             </div>
             <div class="form-group">
-              <label class="radio-inline"><input type="radio" name="gender" value="male">Male</label>
-              <label class="radio-inline"><input type="radio" name="gender" value="female">Female</label>
-              <label class="radio-inline"><input type="radio" name="gender" value="other">Other</label>
+              <label>Gender</label>
+              <br/>
+              <label class="radio-inline"><input type="radio" name="gender" value="male" />Male</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="female" />Female</label>
+              <label class="radio-inline"><input type="radio" name="gender" value="other" />Other</label>
             </div>
             <div class="form-group">
               <label>Education</label>
