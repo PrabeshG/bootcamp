@@ -8,7 +8,7 @@
     if($id){
       $query = "SELECT * FROM participantsDetails WHERE id = '".$id."'";
     }
-     hidden
+    ?>
     <header style="background-color:#e9ecef;">
       <div class="container">
           <h1 style="color:#bbb;"><a href="/bootcamp/home.php"><img src="/bootcamp/hplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
