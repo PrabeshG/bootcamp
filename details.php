@@ -16,6 +16,7 @@
         </div>
         <div class="col-sm-2" style="padding-top:10px;">
             <a class="btn btn-outline-secondary" href="/edit.php?id=<?php echo $id; ?>">Edit</a>
+            <a class="btn btn-outline-secondary" href="/delete.php?id=<?php echo $id; ?>">Delete</a>
         </div>
       </div>
       </div>
@@ -59,14 +60,7 @@
                   <h4><?php echo $r["address"]; ?></h4>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-sm-3">
-                  <h3><small>COMMENTS</small> </h3>
-                </div>
-                <div class="col-sm-6" style="border:2px solid #ccc;border-radius:5px">
-                  <h4><?php echo $r["comments"]; ?></h4>
-                </div>
-              </div>
+
               <div class="row">
                 <div class="col-sm-3">
                   <h3><small>AGE</small> </h3>
@@ -105,6 +99,14 @@
                 </div>
                 <div class="col-sm-6">
                   <h4><?php echo $r["college"]; ?></h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h3><small>COMMENTS</small> </h3>
+                </div>
+                <div class="col-sm-6" style="border:2px solid #ccc;border-radius:5px">
+                  <h4><?php echo $r["comments"]; ?></h4>
                 </div>
               </div>
               <?php
