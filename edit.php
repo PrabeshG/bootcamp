@@ -8,10 +8,10 @@
     if($id){
       $query = "SELECT * FROM participantsDetails WHERE id = '".$id."'";
     }
-     ?>
+     hidden
     <header style="background-color:#e9ecef;">
       <div class="container">
-          <h1 style="color:#bbb;"><a href="/home.php"><img src="/phplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
+          <h1 style="color:#bbb;"><a href="/bootcamp/home.php"><img src="/bootcamp/hplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
       </div>
     </header>
     <div class="container">
@@ -22,8 +22,8 @@
           if($res){
             while($r = mysqli_fetch_array($res)){
               ?>
-              <form  action="/update.php" method="post">
-                <input type="id" name="id" value="<?php echo $r["id"]; ?>">
+              <form  action="/bootcamp/update.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="form-group">
                   <label>Name</label>
                   <input type="text" class="form-control" name="name" value="<?php echo $r["name"]; ?>">
@@ -42,25 +42,30 @@
                 </div>
                 <div class="form-group">
                   <label>Comments</label>
-                  <textarea class="form-control" rows="5" id="comments" name="comments" values="<?php echo $r["comments"]; ?>"></textarea>
+                  <textarea class="form-control" rows="5" id="comments" name="comments" ><?php echo $r["comments"]; ?></textarea>
                 </div>
 
                 <div class="form-group">
                   <label for="Age">Age</label>
-                  <select class="form-control" name="age" placeholder="Select Age" value="<?php echo $r["age"]; ?>">
+                  <select class="form-control" name="age" placeholder="Select Age">
                     <?php for($age=15;$age<=35;$age++){
-                      ?>
-                      <option value="<?php echo $age; ?>"><?php echo $age; ?></option>
-                      <?php
-                    } ?>
+                        $selected = '';
+                        if($r["age"] == $age){
+                          $selected = 'selected="selected"';
+                        }
+                        ?>
+                          <option value="<?php echo $age; ?>" <?php echo $selected; ?>><?php echo $age; ?></option>
+                        <?php
+                    }
+                    ?>
                   </select>
                 </div>
                 <div class="form-group">
                   <label>Gender</label>
                   <br/>
-                  <label class="radio-inline"><input type="radio" name="gender" value="<?php echo $r["gender"]; ?>" />Male</label>
-                  <label class="radio-inline"><input type="radio" name="gender" value="<?php echo $r["gender"]; ?>" />Female</label>
-                  <label class="radio-inline"><input type="radio" name="gender" value="<?php echo $r["gender"]; ?>" />Other</label>
+                  <label class="radio-inline"><input type="radio" name="gender" <?php echo ($r["gender"]=='male')?'checked="checked"':'' ?> />Male</label>
+                  <label class="radio-inline"><input type="radio" name="gender" <?php echo ($r["gender"]=='female')?'checked="checked"':'' ?> />Female</label>
+                  <label class="radio-inline"><input type="radio" name="gender" <?php echo ($r["gender"]=='other')?'checked="checked"':'' ?>/>Other</label>
                 </div>
                 <div class="form-group">
                   <label>Education</label>
