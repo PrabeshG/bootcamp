@@ -1,2 +1,2 @@
 # bootcamp
-Bootcamp on web technoogies organised by FITS
+Bootcamp on web technoogies hosted by FITS
