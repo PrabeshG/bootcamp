@@ -1,4 +1,5 @@
 <?php
+
 $user = 'root';
 $password = '';
 $db = 'bootcampweb';
