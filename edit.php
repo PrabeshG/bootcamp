@@ -23,6 +23,7 @@
             while($r = mysqli_fetch_array($res)){
               ?>
               <form  action="/update.php" method="post">
+                <input type="id" name="id" value="<?php echo $r["id"]; ?>">
                 <div class="form-group">
                   <label>Name</label>
                   <input type="text" class="form-control" name="name" value="<?php echo $r["name"]; ?>">
@@ -41,8 +42,40 @@
                 </div>
                 <div class="form-group">
                   <label>Comments</label>
-                  <textarea class="form-control" rows="5" id="comments" name="comments" value="<?php $r["comments"]; ?>"></textarea>
+                  <textarea class="form-control" rows="5" id="comments" name="comments" values="<?php echo $r["comments"]; ?>"></textarea>
                 </div>
+
+                <div class="form-group">
+                  <label for="Age">Age</label>
+                  <select class="form-control" name="age" placeholder="Select Age" value="<?php echo $r["age"]; ?>">
+                    <?php for($age=15;$age<=35;$age++){
+                      ?>
+                      <option value="<?php echo $age; ?>"><?php echo $age; ?></option>
+                      <?php
+                    } ?>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Gender</label>
+                  <br/>
+                  <label class="radio-inline"><input type="radio" name="gender" value="<?php echo $r["gender"]; ?>" />Male</label>
+                  <label class="radio-inline"><input type="radio" name="gender" value="<?php echo $r["gender"]; ?>" />Female</label>
+                  <label class="radio-inline"><input type="radio" name="gender" value="<?php echo $r["gender"]; ?>" />Other</label>
+                </div>
+                <div class="form-group">
+                  <label>Education</label>
+                  <input type="text" class="form-control" name="education" placeholder="education" value="<?php echo $r["education"]; ?>">
+                </div>
+                <div class="form-group">
+                  <label>Semester</label>
+                  <input type="text" class="form-control" name="semester" placeholder="semester" value="<?php echo $r["semester"]; ?>">
+                </div>
+                <div class="form-group">
+                  <label>College</label>
+                  <input type="text" class="form-control" name="college" placeholder="college" value="<?php echo $r["college"]; ?>">
+                </div>
+
+
                 <button type="submit" class="btn btn-outline-secondary" name="submit">Save</button>
                 <button type="reset" class="btn btn-outline-danger" name="reset">Reset</button>
               </form>
