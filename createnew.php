@@ -4,13 +4,13 @@
   <body>
     <header style="background-color:#e9ecef;">
       <div class="container">
-          <h1 style="color:#bbb;"><a href="/home.php"><img src="/phplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
+          <h1 style="color:#bbb;"><a href="/bootcamp/home.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
       </div>
     </header>
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
-          <form  action="/save.php" method="post">
+          <form  action="/bootcamp/save.php" method="post">
             <div class="form-group">
               <label>Name</label>
               <input type="text" class="form-control" name="name" placeholder="name">
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group">
               <label for="Age">Age</label>
-              <select class="form-control" name="age" placeholder="Select Age">
+              <select class="form-control" name="age">
                 <?php for($age=15;$age<=35;$age++){
                   ?>
                   <option value="<?php echo $age; ?>"><?php echo $age; ?></option>
