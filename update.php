@@ -28,7 +28,7 @@
             WHERE `participantsDetails`.`id` = '".$id."'";
   $result = $conn->query($query);
   if($result){
-    header("Location:/details.php?id='".$id."'?updated=true");
+    header("Location:/bootcamp/details.php?updated=true");
   }else{
     echo "Not Updated.";
   }
