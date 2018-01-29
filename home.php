@@ -6,9 +6,6 @@ require_once("dbconn.php");
   <?php include("head.php") ?>
   <body>
     <?php
-    // if($_GET["saved"] == "true"){
-    //   echo "<p>Saved successfully</p>";
-    // }
     $query = "SELECT * FROM participantsDetails";
      ?>
     <header class="jumbotron jumbotron-fluid">
@@ -18,7 +15,7 @@ require_once("dbconn.php");
       <h1 class="text-center" id="head_title"><a href="/home.php"><img src="/phplogo.png" alt="php" style="width:60px;"></a>BootCamp on Web Technologies...</h1>
         </div>
         <div class="col-sm-2">
-            <a href="/createnew.php" class="btn btn-outline-secondary">Add New</a>
+            <a href="/bootcamp/createnew.php" class="btn btn-outline-secondary">Add New</a>
         </div>
       </div>
       </div>
@@ -43,20 +40,20 @@ require_once("dbconn.php");
           $res = $conn->query($query);
           $count = 1;
           if($res){
-          while($r = mysqli_fetch_array($res)){
-            $id = $r["id"];
-          ?>
-            <tr>
-              <td><a href="/details.php?id=<?php echo $id; ?>"><?php echo $count; ?></a></td>
-              <td><?php echo $r["name"]; ?></td>
-              <td><?php echo $r["email"]; ?></td>
-              <td><?php echo $r["contact"]; ?></td>
-              <td><?php echo $r["address"]; ?></td>
-              <td><?php echo $r["comments"]; ?></td>
-            </tr>
-          <?php
-          $count++;
-          }
+            while($r = mysqli_fetch_array($res)){
+              $id = $r["id"];
+            ?>
+              <tr>
+                <td><a href="/bootcamp/details.php?id=<?php echo $id; ?>"><?php echo $count; ?></a></td>
+                <td><?php echo $r["name"]; ?></td>
+                <td><?php echo $r["email"]; ?></td>
+                <td><?php echo $r["contact"]; ?></td>
+                <td><?php echo $r["address"]; ?></td>
+                <td><?php echo $r["comments"]; ?></td>
+              </tr>
+            <?php
+            $count++;
+            }
         }
            ?>
         </tbody>
