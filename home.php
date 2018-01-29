@@ -12,7 +12,7 @@ require_once("dbconn.php");
       <div class="container">
         <div class="row">
           <div class="col-sm-10">
-      <h1 class="text-center" id="head_title"><a href="/home.php"><img src="/phplogo.png" alt="php" style="width:60px;"></a>BootCamp on Web Technologies...</h1>
+      <h1 class="text-center" id="head_title"><a href="/bootcamp/home.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:60px;"></a>BootCamp on Web Technologies...</h1>
         </div>
         <div class="col-sm-2">
             <a href="/bootcamp/createnew.php" class="btn btn-outline-secondary">Add New</a>
