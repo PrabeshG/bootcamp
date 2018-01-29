@@ -12,11 +12,11 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-10">
-          <h2 style="color:#bbb; padding-top:5px;"><a href="/home.php"><img src="/phplogo.png" alt="php" style="width:50px;"></a>Details of Participants on<small> BootCamp on Web Technologies...</small></h2>
+          <h2 style="color:#bbb; padding-top:5px;"><a href="/bootcamp/home.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:50px;"></a>Details of Participants on<small> BootCamp on Web Technologies...</small></h2>
         </div>
         <div class="col-sm-2" style="padding-top:10px;">
-            <a class="btn btn-outline-secondary" href="/edit.php?id=<?php echo $id; ?>">Edit</a>
-            <a class="btn btn-outline-secondary" href="/delete.php?id=<?php echo $id; ?>">Delete</a>
+            <a class="btn btn-outline-secondary" href="/bootcamp/edit.php?id=<?php echo $id; ?>">Edit</a>
+            <a class="btn btn-outline-secondary" href="/bootcamp/delete.php?id=<?php echo $id; ?>">Delete</a>
         </div>
       </div>
       </div>
@@ -24,89 +24,89 @@
 <br/>
     <div class="container">
           <?php
-          $re = $conn->query($query);
-          if($re){
-            while($r = mysqli_fetch_array($re)){
+          $res = $conn->query($query);
+          if($res){
+            while($r = mysqli_fetch_array($res)){
               ?>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>NAME</small> </h3>
+                  <h5><small>NAME</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["name"]; ?></h4>
+                  <h5><?php echo $r["name"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>EMAIL</small> </h3>
+                  <h5><small>EMAIL</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["email"]; ?></h4>
+                  <h5><?php echo $r["email"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>CONTACT</small> </h3>
+                  <h5><small>CONTACT</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["contact"]; ?></h4>
+                  <h5><?php echo $r["contact"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>ADDRESS</small> </h3>
+                  <h5><small>ADDRESS</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["address"]; ?></h4>
+                  <h5><?php echo $r["address"]; ?></h5>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>AGE</small> </h3>
+                  <h5><small>AGE</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["age"]; ?></h4>
+                  <h5><?php echo $r["age"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>GENDER</small> </h3>
+                  <h5><small>GENDER</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["gender"]; ?></h4>
+                  <h5><?php echo $r["gender"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>EDUCATION</small> </h3>
+                  <h5><small>EDUCATION</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["education"]; ?></h4>
+                  <h5><?php echo $r["education"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>SEMESTER</small> </h3>
+                  <h5><small>SEMESTER</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["semester"]; ?></h4>
+                  <h5><?php echo $r["semester"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>COLLEGE</small> </h3>
+                  <h5><small>COLLEGE</small> </h5>
                 </div>
                 <div class="col-sm-6">
-                  <h4><?php echo $r["college"]; ?></h4>
+                  <h5><?php echo $r["college"]; ?></h5>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-3">
-                  <h3><small>COMMENTS</small> </h3>
+                  <h5><small>COMMENTS</small> </h5>
                 </div>
                 <div class="col-sm-6" style="border:2px solid #ccc;border-radius:5px">
-                  <h4><?php echo $r["comments"]; ?></h4>
+                  <p><?php echo $r["comments"]; ?></p>
                 </div>
               </div>
               <?php
