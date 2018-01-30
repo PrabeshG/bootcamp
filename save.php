@@ -38,7 +38,7 @@
           )";
   $result = $conn->query($query);
   if($result){
-    header("Location:/bootcamp/home.php?saved=true");
+    header("Location:/bootcamp/index.php?saved=true");
   }else{
     echo "Data not inserted.";
   }

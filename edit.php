@@ -11,7 +11,7 @@
     ?>
     <header style="background-color:#e9ecef;">
       <div class="container">
-          <h1 style="color:#bbb;"><a href="/bootcamp/home.php"><img src="/bootcamp/hplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
+          <h1 style="color:#bbb;"><a href="/bootcamp/index.php"><img src="/bootcamp/hplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
       </div>
     </header>
     <div class="container">
