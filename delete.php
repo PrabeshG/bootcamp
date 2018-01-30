@@ -4,7 +4,7 @@ $id = $_GET["id"];
 $query = "DELETE FROM `participantsDetails` WHERE `participantsDetails`.`id` = '".$id."'";
 $res = $conn->query($query);
 if($res){
-  header("Location:/home.php");
+  header("Location:/index.php");
 }else{
   echo "Not Deleted";
 }
