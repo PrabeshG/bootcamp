@@ -1,21 +1,31 @@
 <?php
 require_once("dbconn.php");
- ?>
+if(isset($_GET["loggedin"])){
+if($_GET["loggedin"] == 'success'){
+  // echo "<p>Successfully loggedin</p>";
+  // echo "<a href='/bootcamp/logout.php' class='btn btn-outline-secondary'>Logout</a>";
+?>
+
+
 <!DOCTYPE html>
 <html>
   <?php include("head.php") ?>
   <body>
     <?php
-    $query = "SELECT * FROM participantsDetails";
+
      ?>
     <header class="jumbotron jumbotron-fluid">
       <div class="container">
         <div class="row">
-          <div class="col-sm-10">
-      <h1 class="text-center" id="head_title"><a href="/bootcamp/home.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:60px;"></a>BootCamp on Web Technologies...</h1>
+          <div class="col-sm-8">
+      <h1 class="text-center" id="head_title"><a href="/bootcamp/index.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:60px;"></a>BootCamp on Web Technologies...</h1>
         </div>
-        <div class="col-sm-2">
-            <a href="/bootcamp/createnew.php" class="btn btn-outline-secondary">Add New</a>
+        <div class="col-sm-4">
+            <a class='btn btn-outline-secondary disabled text-primary'><?php
+            echo $_SESSION["username"] ?></a>
+            <a href='/bootcamp/createnew.php' class='btn btn-outline-secondary'>Add new</a>
+           <a href='/bootcamp/logout.php' class='btn btn-outline-secondary'>Logout</a>
+
         </div>
       </div>
       </div>
@@ -23,6 +33,7 @@ require_once("dbconn.php");
     <div class="container">
       <div class="row">
           <?php
+          $query = "SELECT * FROM participantsDetails";
           $res = $conn->query($query);
           $count = 1;
           if($res){
@@ -44,5 +55,12 @@ require_once("dbconn.php");
            ?>
      </div>
   </div>
+  <?php
+  }
+  include("footer.php");
+} else {
+  header("Location:/bootcamp/login.php");
+}
+?>
   </body>
 </html>

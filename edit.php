@@ -44,7 +44,8 @@
                   <label>Comments</label>
                   <textarea class="form-control" rows="5" id="comments" name="comments" ><?php echo $r["comments"]; ?></textarea>
                 </div>
-
+              </div>
+              <div class="col-sm-6">
                 <div class="form-group">
                   <label for="Age">Age</label>
                   <select class="form-control" name="age" placeholder="Select Age">
@@ -89,10 +90,8 @@
           }
           ?>
         </div>
-    <div class="col-sm-6">
-      <img src="/phplogo.png" alt="php" class="img-rounded">
-    </div>
   </div>
     </div>
+    <?php include("footer.php"); ?>
   </body>
 </html>

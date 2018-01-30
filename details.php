@@ -11,12 +11,13 @@
     <header style="background-color:#e9ecef;">
       <div class="container">
         <div class="row">
-          <div class="col-sm-10">
+          <div class="col-sm-9">
           <h2 style="color:#bbb; padding-top:5px;"><a href="/bootcamp/index.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:50px;"></a>Details of Participants on<small> BootCamp on Web Technologies...</small></h2>
         </div>
-        <div class="col-sm-2" style="padding-top:10px;">
+        <div class="col-sm-3" style="padding-top:10px;">
+          <a class="btn btn-link" href="/bootcamp/index.php" style="text-decoration: none;"> Back</a>
             <a class="btn btn-outline-secondary" href="/bootcamp/edit.php?id=<?php echo $id; ?>">Edit</a>
-            <a class="btn btn-outline-secondary" href="/bootcamp/delete.php?id=<?php echo $id; ?>">Delete</a>
+            <a class="btn btn-outline-danger" href="/bootcamp/delete.php?id=<?php echo $id; ?>">Delete</a>
         </div>
       </div>
       </div>
@@ -114,6 +115,6 @@
           }
            ?>
     </div>
-
+<?php include("footer.php"); ?>
   </body>
 </html>
