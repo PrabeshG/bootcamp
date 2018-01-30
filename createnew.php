@@ -4,7 +4,17 @@
   <body>
     <header style="background-color:#e9ecef;">
       <div class="container">
-          <h1 style="color:#bbb;"><a href="/bootcamp/index.php"><img src="/bootcamp/phplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
+        <div class="row">
+          <div class="col-sm-10">
+          <h2 style="color:#bbb;"><a href="/bootcamp/index.php" class="btn btn-outline-secondary " style="text-decoration: none;">
+            Home
+            <!-- <img src="/bootcamp/phplogo.png" alt="php" style="width:50px;"> -->
+          </a> Add New Participants To<small> BootCamp on Web Technologies...</small></h2>
+        </div>
+        <div class="col-sm-2">
+          <!-- <a href="/bootcamp/index.php" class="btn btn-link">Back</a> -->
+        </div>
+      </div>
       </div>
     </header>
     <div class="container">
@@ -31,6 +41,8 @@
               <label>Comments</label>
               <textarea class="form-control" rows="5" id="comments" name="comments" placeholder="comments"></textarea>
             </div>
+          </div>
+          <div class="col-sm-6">
             <div class="form-group">
               <label for="Age">Age</label>
               <select class="form-control" name="age">
@@ -62,12 +74,11 @@
             </div>
             <button type="submit" class="btn btn-outline-secondary" name="submit">Create</button>
             <button type="reset" class="btn btn-outline-danger" name="reset">Reset</button>
+            <!-- <a href="/bootcamp/addmorefields.php" class="btn btn-outline-secondary">Add more fields</a> -->
           </form>
         </div>
-    <div class="col-sm-6">
-      <img src="/bootcamp/phplogo.png" alt="php" class="img-fluid img-rounded img-responsive">
-    </div>
   </div>
     </div>
+    <?php include("footer.php"); ?>
   </body>
 </html>
