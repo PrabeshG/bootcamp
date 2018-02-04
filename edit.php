@@ -9,10 +9,27 @@
       $query = "SELECT * FROM participantsDetails WHERE id = '".$id."'";
     }
     ?>
-    <header style="background-color:#e9ecef;">
+
+    <header>
+      <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #e9ecef;">
       <div class="container">
-          <h1 style="color:#bbb;"><a href="/bootcamp/index.php"><img src="/bootcamp/hplogo.png" alt="php" style="width:50px;"></a>Add New Participants To<small> BootCamp on Web Technologies...</small></h1>
-      </div>
+        <ul class="navbar-nav">
+           <a class='btn btn-outline-secondary disabled text-primary' style="margin:5px;"><?php
+            echo $_SESSION["username"] ?></a>
+            <h4 class="navbar-brand"><a href="/bootcamp/index.php"><i class="fas fa-home"></i></a> Edit Participants </h4>
+
+         <li class="nav-item">
+            <a href='/bootcamp/details.php?id=<?php echo $id; ?>' class='btn btn-link' style="margin:5px;text-decoration: none;">Back</a>
+          </li>
+          <li class="nav-item">
+            <a href='/bootcamp/blog.php' class='btn btn-outline-secondary' style="margin:5px;">Blog</a>
+          </li>
+          <li class="nav-item">
+             <a href='/bootcamp/logout.php' class='btn btn-outline-secondary' style="margin:5px;">Logout</a>
+          </li>
+        </ul>
+    </nav>
+    <br/><br/><br/><br/>
     </header>
     <div class="container">
       <div class="row">
@@ -41,12 +58,6 @@
                   <input type="text" class="form-control" name="address" value="<?php echo $r["address"]; ?>">
                 </div>
                 <div class="form-group">
-                  <label>Comments</label>
-                  <textarea class="form-control" rows="5" id="comments" name="comments" ><?php echo $r["comments"]; ?></textarea>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="form-group">
                   <label for="Age">Age</label>
                   <select class="form-control" name="age" placeholder="Select Age">
                     <?php for($age=15;$age<=35;$age++){
@@ -64,10 +75,19 @@
                 <div class="form-group">
                   <label>Gender</label>
                   <br/>
-                  <label class="radio-inline"><input type="radio" name="gender" <?php echo ($r["gender"]=='male')?'checked="checked"':'' ?> />Male</label>
-                  <label class="radio-inline"><input type="radio" name="gender" <?php echo ($r["gender"]=='female')?'checked="checked"':'' ?> />Female</label>
-                  <label class="radio-inline"><input type="radio" name="gender" <?php echo ($r["gender"]=='other')?'checked="checked"':'' ?>/>Other</label>
+                  <label class="radio-inline">
+                    <input type="radio" name="gender" <?php echo ($r["gender"]== "male") ? 'checked="checked"' : ""; ?> value="male" />
+                    Male
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="gender" <?php echo ($r["gender"]== "female") ? 'checked="checked"' : ""; ?> value="female" />Female
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="gender" <?php echo ($r["gender"]== "other") ? 'checked="checked"' : ""; ?> value="other"/>Other
+                  </label>
                 </div>
+              </div>
+              <div class="col-sm-6">
                 <div class="form-group">
                   <label>Education</label>
                   <input type="text" class="form-control" name="education" placeholder="education" value="<?php echo $r["education"]; ?>">
@@ -80,8 +100,10 @@
                   <label>College</label>
                   <input type="text" class="form-control" name="college" placeholder="college" value="<?php echo $r["college"]; ?>">
                 </div>
-
-
+                <div class="form-group">
+                  <label>Comments</label>
+                  <textarea class="form-control" rows="5" id="comments" name="comments" ><?php echo $r["comments"]; ?></textarea>
+                </div>
                 <button type="submit" class="btn btn-outline-secondary" name="submit">Save</button>
                 <button type="reset" class="btn btn-outline-danger" name="reset">Reset</button>
               </form>

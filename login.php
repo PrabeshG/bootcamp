@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 require_once("dbconn.php"); 
 if(!empty($_POST["username"]) && !empty($_POST["password"])){
   $username = $_POST["username"];
@@ -40,10 +40,7 @@ if(!empty($_POST["username"]) && !empty($_POST["password"])){
       <div class="container">
         <div class="row">
           <div class="col-sm-10">
-          <h2 style="color:#bbb; padding-top:5px;"><a href="/bootcamp/index.php" class="btn btn-outline-secondary">
-            Home
-            <!-- <img src="/bootcamp/phplogo.png" alt="php" style="width:50px;"> -->
-          </a> Login<small> BootCamp on Web Technologies...</small></h2>
+          <h2 style="color:#bbb; padding-top:5px;">Login To<small> BootCamp on Web Technologies...</small></h2>
         </div>
         <div class="col-sm-2" style="padding-top:10px;">
         </div>
